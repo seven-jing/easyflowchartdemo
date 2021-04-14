@@ -1,0 +1,1050 @@
+.primary-green {
+  // 公用
+  $--color-primary: #00C2B2 !default;
+
+  $--color-link-1: #D5F4ED !default;
+  $--color-link-2: #00C2B2 !default;
+  $--color-link-3: #00A89A !default;
+
+  $--color-text-1: #ccc !default;
+  $--color-text-2: #999 !default;
+  $--color-text-3: #666 !default;
+  $--color-text-4: #333 !default;
+
+  $--color-line-1: #fff !default;
+  $--color-line-2: #000 !default;
+
+  // 按钮组件el-button
+  .el-button {
+    padding: 8px 10px;
+    font-size: 10px;
+    box-sizing: border-box;
+    height: 28px;
+
+    &.el-button--default:not(.is-disabled):hover,
+    &.el-button--default:not(.is-disabled):focus {
+      color: $--color-primary;
+      background-color: mix($--color-line-1, $--color-primary, 90%);
+      border-color: mix($--color-line-1, $--color-primary, 80%);
+    }
+
+    // 朴素类型按钮（获取焦点时）
+    &.is-plain.el-button--default:not(.is-disabled):hover,
+    &.is-plain.el-button--default:not(.is-disabled):focus {
+      color: $--color-primary;
+      background-color: $--color-line-1;
+      border-color: $--color-primary;
+    }
+
+    // 文字类型按钮（普通和获取焦点时）
+    &.el-button--text:not(.is-disabled) {
+      color: $--color-primary;
+
+      &:hover,
+      &:focus {
+        color: mix($--color-line-1, $--color-primary, 30%);
+        background-color: transparent;
+        border-color: transparent;
+      }
+    }
+
+    // 圆角按钮
+    &.is-round {
+      padding: 8px 10px;
+      font-size: 10px;
+    }
+
+    // 圆形按钮
+    &.is-circle {
+      padding: 8px;
+    }
+
+    //不同尺寸，large、medium、small、mini
+    &.el-button--large,
+    &.el-button--large.is-round {
+      padding: 12px 14px;
+      font-size: 14px;
+      height: 40px;
+
+      // 圆形按钮
+      &.is-circle {
+        padding: 12px;
+      }
+    }
+
+    &.el-button--medium,
+    &.el-button--medium.is-round {
+      padding: 6px 8px;
+      height: 26px;
+
+      // 圆形按钮
+      &.is-circle {
+        padding: 6px 7px;
+      }
+    }
+
+    &.el-button--small,
+    &.el-button--small.is-round {
+      padding: 6px 6px;
+      height: 24px;
+    }
+
+    &.el-button--mini,
+    &.el-button--mini.is-round {
+      padding: 4px 4px;
+      height: 20px;
+    }
+
+    // primary类型
+    &.el-button--primary {
+      background-color: $--color-primary;
+      border-color: $--color-primary;
+
+      &:hover,
+      &:focus {
+        background-color: mix($--color-line-1, $--color-primary, 10%);
+        border-color: mix($--color-line-1, $--color-primary, 10%);
+      }
+
+      // 朴素按钮时
+      &.is-plain {
+        color: $--color-primary;
+        background: mix($--color-line-1, $--color-primary, 70%);
+        border-color: mix($--color-line-1, $--color-primary, 50%);
+
+        &:hover,
+        &:focus {
+          color: $--color-line-1;
+          background-color: mix($--color-line-1, $--color-primary, 10%);
+          border-color: mix($--color-line-1, $--color-primary, 10%);
+        }
+      }
+
+      // disable时
+      &.is-disabled {
+        background-color: mix($--color-line-1, $--color-primary, 50%);
+        border-color: mix($--color-line-1, $--color-primary, 50%);
+
+        &:hover,
+        &:focus {
+          background-color: mix($--color-line-1, $--color-primary, 50%);
+          border-color: mix($--color-line-1, $--color-primary, 50%);
+        }
+
+        // disable时，朴素按钮时
+        &.is-plain,
+        &.is-plain:hover,
+        &.is-plain:focus {
+          color: mix($--color-line-1, $--color-primary, 30%);
+          background: mix($--color-line-1, $--color-primary, 70%);
+          border-color: mix($--color-line-1, $--color-primary, 60%);
+        }
+      }
+    }
+  }
+
+  // 标签组件el-tag
+  .el-tag {
+    height: 28px;
+    line-height: 28px;
+
+    &.el-tag--medium {
+      height: 26px;
+      line-height: 26px;
+    }
+
+    &.el-tag--small {
+      height: 24px;
+      line-height: 24px;
+    }
+
+    &.el-tag--mini {
+      height: 20px;
+      line-height: 20px;
+    }
+  }
+
+  // 输入框组件el-input
+  .el-input,
+  .el-date-editor {
+    // 时间组件的el-input__inner层级和el-input里的不一样
+    &.el-input__inner,
+    > .el-input__inner {
+      height: 28px;
+      line-height: 28px;
+      font-size: 12px;
+      color: #999;
+
+      &:focus {
+        border-color: $--color-primary;
+      }
+    }
+
+    .el-input__icon {
+      line-height: 28px;
+    }
+
+    //不同尺寸，large、medium、small、mini
+    &.el-input--large {
+      .el-input__inner {
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+      }
+
+      .el-input__icon {
+        line-height: 40px;
+      }
+    }
+
+    &.el-input--medium {
+      .el-input__inner {
+        height: 24px;
+        line-height: 24px;
+        font-size: 12px;
+      }
+
+      .el-input__icon {
+        line-height: 24px;
+      }
+    }
+
+    &.el-input--small {
+      .el-input__inner {
+        height: 22px;
+        line-height: 22px;
+        font-size: 10px;
+      }
+
+      .el-input__icon {
+        line-height: 22px;
+      }
+    }
+
+    &.el-input--mini {
+      .el-input__inner {
+        height: 20px;
+        line-height: 20px;
+        font-size: 10px;
+      }
+
+      .el-input__icon {
+        line-height: 20px;
+      }
+    }
+  }
+
+  .el-textarea {
+    textarea:focus {
+      border-color: $--color-primary;
+    }
+  }
+
+  // 单选按钮组件el-radio
+  .el-radio {
+    .el-radio__input {
+      .el-radio__inner {
+        width: 16px;
+        height: 16px;
+        border-color: #cec6cf;
+
+        &:hover {
+          border-color: $--color-link-3;
+          background-color: #e3f2fc;
+        }
+      }
+
+      &.is-checked {
+        .el-radio__inner {
+          border-color: $--color-link-2;
+          background: $--color-link-2;
+        }
+
+        + .el-radio__label {
+          color: #606266;
+        }
+      }
+    }
+
+    &.is-bordered {
+      height: 28px;
+      padding: 5px 10px 0 5px;
+
+      &.el-radio--large {
+        height: 40px;
+        padding: 12px 20px 0 10px;
+      }
+
+      &.el-radio--medium {
+        height: 26px;
+        padding: 4px 8px 0 5px;
+
+        .el-radio__input {
+          .el-radio__inner {
+            width: 14px;
+            height: 14px;
+          }
+        }
+
+        .el-radio__label {
+          font-size: 10px;
+        }
+      }
+
+      &.el-radio--small {
+        height: 24px;
+        padding: 4px 8px 0 5px;
+
+        .el-radio__input {
+          .el-radio__inner {
+            width: 14px;
+            height: 14px;
+          }
+        }
+
+        .el-radio__label {
+          font-size: 10px;
+        }
+      }
+
+      &.el-radio--mini {
+        height: 20px;
+        padding: 2px 6px 0 5px;
+
+        .el-radio__input {
+          .el-radio__inner {
+            width: 12px;
+            height: 12px;
+
+            &::after {
+              width: 3px;
+              height: 3px;
+            }
+          }
+        }
+
+        .el-radio__label {
+          font-size: 10px;
+        }
+      }
+    }
+
+    .el-radio__label {
+      font-size: 12px;
+    }
+  }
+
+  .el-radio-group {
+    .el-radio-button__inner {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+
+    .el-radio-button__orig-radio {
+      &:checked {
+        + .el-radio-button__inner {
+          background-color: $--color-link-2;
+          border-color: $--color-link-2;
+        }
+      }
+    }
+
+    .el-radio-button--large {
+      .el-radio-button__inner {
+        padding: 12px 20px;
+        font-size: 14px;
+      }
+    }
+
+    .el-radio-button--medium {
+      .el-radio-button__inner {
+        padding: 4px 8px;
+        font-size: 10px;
+      }
+    }
+
+    .el-radio-button--small {
+      .el-radio-button__inner {
+        padding: 4px 6px;
+        font-size: 10px;
+      }
+    }
+
+    .el-radio-button--mini {
+      .el-radio-button__inner {
+        padding: 3px 5px;
+        font-size: 10px;
+      }
+    }
+  }
+
+  // 多选按钮组件el-checkbox
+  .el-checkbox {
+    .el-checkbox__input {
+      .el-checkbox__inner {
+        width: 16px;
+        height: 16px;
+      }
+
+      &.is-checked {
+        .el-checkbox__inner {
+          background-color: $--color-primary;
+          border-color: $--color-primary;
+
+          &:after {
+            left: 5px;
+            top: 2px;
+            transform: rotate(55deg) scaleY(1);
+          }
+        }
+
+        + .el-checkbox__label {
+          color: $--color-primary;
+        }
+      }
+
+      &.is-indeterminate {
+        .el-checkbox__inner {
+          background-color: $--color-primary;
+          border-color: $--color-primary;
+
+          &:before {
+            top: 6px;
+          }
+        }
+      }
+    }
+
+    &.is-bordered {
+      height: 28px;
+      padding: 5px 10px 0 5px;
+
+      &.el-checkbox--large {
+        height: 40px;
+        padding: 12px 20px 0 10px;
+      }
+
+      &.el-checkbox--medium {
+        height: 26px;
+        padding: 4px 8px 0 5px;
+
+        .el-checkbox__input {
+          .el-checkbox__inner {
+            width: 14px;
+            height: 14px;
+          }
+        }
+
+        .el-checkbox__label {
+          font-size: 10px;
+        }
+      }
+
+      &.el-checkbox--small {
+        height: 24px;
+        padding: 4px 8px 0 5px;
+
+        .el-checkbox__input {
+          .el-checkbox__inner {
+            width: 14px;
+            height: 14px;
+          }
+        }
+
+        .el-checkbox__label {
+          font-size: 10px;
+        }
+      }
+
+      &.el-checkbox--mini {
+        height: 20px;
+        padding: 2px 6px 0 5px;
+
+        .el-checkbox__input {
+          .el-checkbox__inner {
+            width: 12px;
+            height: 12px;
+
+            &::after {
+              width: 3px;
+              height: 3px;
+            }
+          }
+        }
+
+        .el-checkbox__label {
+          font-size: 10px;
+        }
+      }
+    }
+
+    .el-checkbox__label {
+      font-size: 12px;
+    }
+  }
+
+  .el-checkbox-group {
+    .is-checked {
+      .el-checkbox-button__inner {
+        background-color: $--color-primary;
+        border-color: $--color-primary;
+      }
+    }
+
+    .el-checkbox-button__inner {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+
+    .el-checkbox-button--large {
+      .el-checkbox-button__inner {
+        padding: 12px 20px;
+        font-size: 14px;
+      }
+    }
+
+    .el-checkbox-button--medium {
+      .el-checkbox-button__inner {
+        padding: 4px 8px;
+        font-size: 10px;
+      }
+    }
+
+    .el-checkbox-button--small {
+      .el-checkbox-button__inner {
+        padding: 4px 6px;
+        font-size: 10px;
+      }
+    }
+
+    .el-checkbox-button--mini {
+      .el-checkbox-button__inner {
+        padding: 3px 5px;
+        font-size: 10px;
+      }
+    }
+  }
+
+  // 计数器组件el-input-number
+  .el-input-number {
+    font-size: 10px;
+    box-sizing: border-box;
+    height: 28px;
+    line-height: 28px;
+    width: 150px;
+
+    .el-input-number__decrease,
+    .el-input-number__increase {
+      height: 26px;
+      top: 2px;
+    }
+
+    // 设定按钮位置右侧时
+    &.is-controls-right {
+      .el-input-number__decrease,
+      .el-input-number__increase {
+        line-height: 9px;
+      }
+
+      .el-input-number__decrease {
+        bottom: 0;
+      }
+    }
+
+    //不同尺寸，large、medium、small、mini
+    &.el-input-number--large {
+      height: 40px;
+      line-height: 40px;
+
+      .el-input-number__decrease,
+      .el-input-number__increase {
+        height: 38px;
+        top: 1px;
+      }
+    }
+
+    &.el-input-number--medium {
+      height: 26px;
+      line-height: 26px;
+
+      .el-input-number__decrease,
+      .el-input-number__increase {
+        height: 22px;
+        top: 2.5px;
+      }
+    }
+
+    &.el-input-number--small {
+      height: 24px;
+      line-height: 24px;
+
+      .el-input-number__decrease,
+      .el-input-number__increase {
+        height: 20px;
+        top: 2px;
+      }
+    }
+
+    &.el-input-number--mini {
+      height: 20px;
+      line-height: 20px;
+
+      .el-input-number__decrease,
+      .el-input-number__increase {
+        height: 18px;
+        top: 1px;
+      }
+    }
+  }
+
+  // 选择器组件el-select
+  .el-select {
+    .el-input.is-focus {
+      .el-input__inner {
+        border-color: $--color-primary;
+      }
+    }
+  }
+
+  .el-select-dropdown__item {
+    height: 32px;
+    line-height: 32px;
+  }
+
+  // 级联选择器el-cascader
+  .el-cascader {
+    .el-input.is-focus {
+      .el-input__inner {
+        border-color: $--color-primary;
+      }
+    }
+  }
+
+  .el-cascader-node {
+    height: 32px;
+    line-height: 32px;
+
+    &.in-active-path,
+    &.is-selectable.in-checked-path,
+    &.is-active {
+      color: $--color-primary;
+    }
+  }
+
+  // switch组件el-switch
+  .el-switch {
+    &.is-checked {
+      .el-switch__core {
+        border-color: $--color-primary;
+        background-color: $--color-primary;
+      }
+    }
+  }
+
+  // 滑块组件el-slider
+  .el-slider {
+    .el-slider__runway {
+      height: 4px;
+
+      .el-slider__bar {
+        height: 4px;
+        background-color: $--color-primary;
+      }
+
+      .el-slider__stop {
+        width: 4px;
+        height: 4px;
+      }
+
+      .el-slider__button {
+        box-sizing: border-box;
+        border: solid 1px #c9cbd3;
+        box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  // 时间组件el-time-picker
+  .el-picker-panel {
+    .time-select-item {
+      padding: 4px 10px;
+      font-size: 12px;
+      line-height: 18px;
+
+      &.selected:not(.disabled) {
+        color: $--color-primary;
+      }
+    }
+  }
+
+  .el-time-panel {
+    width: 160px;
+
+    .el-time-spinner__item {
+      height: 28px;
+      line-height: 28px;
+    }
+  }
+
+  // 日期组件el-date-picker
+  .el-date-picker {
+    width: 288px;
+
+    &.has-sidebar {
+      width: 498px;
+
+      .el-picker-panel__sidebar {
+        font-size: 12px;
+      }
+    }
+
+    .el-picker-panel__body {
+      .el-date-picker__header {
+        margin: 3px 12px 0;
+
+        .el-date-picker__header-label {
+          font-size: 12px;
+          line-height: 12px;
+        }
+      }
+
+      .el-picker-panel__content {
+        margin: 0 10px 3px;
+        width: 268px;
+
+        .el-date-table {
+          font-size: 10px;
+
+          td {
+            width: 28px;
+            height: 28px;
+
+            div {
+              height: 28px;
+            }
+
+            span {
+              border-radius: 25%;
+            }
+
+            &.today {
+              span {
+                color: $--color-primary;
+              }
+            }
+
+            &.current:not(.disabled),
+            &.selected,
+            &.start-date,
+            &.end-date {
+              span {
+                background-color: $--color-primary;
+              }
+            }
+          }
+        }
+
+        .el-month-table,
+        .el-year-table {
+          td {
+            &.today,
+            &.current:not(.disabled) {
+              .cell {
+                color: $--color-primary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .el-date-range-picker {
+    width: 576px;
+
+    .el-date-range-picker__content {
+      padding: 3px 12px 0;
+
+      .el-date-range-picker__header {
+        div {
+          font-size: 12px;
+        }
+      }
+
+      .el-date-table {
+        font-size: 10px;
+
+        td {
+          width: 28px;
+          height: 28px;
+
+          div {
+            height: 28px;
+          }
+
+          span {
+            border-radius: 25%;
+          }
+
+          &.start-date,
+          &.end-date {
+            span {
+              background-color: $--color-primary;
+            }
+          }
+        }
+      }
+
+      .el-month-table,
+      .el-year-table {
+        td {
+          &.start-date,
+          &.end-date {
+            .cell {
+              background-color: $--color-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .el-range-editor,
+  .el-date-editor--daterange {
+    .el-range-separator {
+      line-height: 22px;
+    }
+
+    .el-input__icon {
+      line-height: 22px;
+    }
+  }
+
+  // 穿梭框组件el-transfer
+  .el-transfer {
+    .el-transfer-panel__header {
+      height: 32px;
+      line-height: 32px;
+
+      .el-checkbox {
+        line-height: 32px;
+
+        .el-checkbox__label {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .el-transfer-panel__body {
+      .el-transfer-panel__item {
+        .el-checkbox__label {
+          line-height: 33px;
+          font-size: 10px;
+        }
+      }
+
+      .el-transfer-panel__filter {
+        margin: 5px;
+
+        input {
+          border-radius: 3px;
+          padding-left: 25px;
+        }
+
+        .el-input__icon {
+          margin-left: 0;
+          line-height: 23px;
+          width: 23px;
+        }
+      }
+    }
+
+    .el-transfer__buttons {
+      .el-button {
+        display: block;
+        padding: 6px 10px 10px;
+
+        span {
+          font-size: 12px;
+        }
+      }
+
+      .el-button + .el-button {
+        margin-left: 0;
+      }
+    }
+  }
+
+  // 导航菜单组件el-menu
+  .el-menu {
+    .el-menu-item {
+      height: 44px;
+      line-height: 44px;
+      font-size: 12px;
+    }
+
+    .el-submenu {
+      .el-submenu__title {
+        height: 44px;
+        line-height: 44px;
+        font-size: 12px;
+      }
+    }
+  }
+
+  // 表格组件el-table
+  .el-table {
+    font-size: 12px;
+
+    thead {
+      color: #333;
+    }
+
+    tbody {
+      color: #666;
+    }
+
+    td,
+    th {
+      padding: 9px 0;
+    }
+
+    th {
+      background-color: #ebecf0;
+    }
+
+    .el-table__body tr:hover > td {
+      background-color: #f7f8fa;
+    }
+
+    // 启用斑马纹时，深色框背景色
+    &.el-table--striped .el-table__body tr.el-table__row--striped td {
+      background-color: #f7f8fa;
+    }
+
+    &.el-table--striped .el-table__body tr:hover > td {
+      background-color: #dcdee3;
+    }
+
+    &.el-table--border .el-table__body tr td:last-child {
+      border-right: none;
+    }
+  }
+
+  .el-table .cell,
+  .el-table th div,
+  .el-table--border td:first-child .cell,
+  .el-table--border th:first-child .cell {
+    padding-left: 10px;
+  }
+
+  // 加载组件el-loading
+  .el-loading-spinner {
+    .path {
+      stroke: $--color-primary;
+    }
+
+    .el-loading-text,
+    i {
+      color: $--color-primary;
+    }
+  }
+
+  // 分页组件el-pagination
+  .el-pagination {
+    button:hover {
+      color: $--color-primary;
+    }
+
+    .el-pager {
+      li.active,
+      li:hover {
+        color: $--color-primary;
+      }
+    }
+
+    &.is-background {
+      .btn-prev,
+      .btn-next,
+      .el-pager li {
+        min-width: 29px;
+        border-radius: 4px;
+      }
+
+      .el-pager {
+        li:not(.disabled).active {
+          background-color: $--color-primary;
+        }
+
+        li:not(.disabled):not(.active):hover {
+          color: $--color-primary;
+        }
+      }
+
+      button:hover {
+        color: $--color-primary;
+      }
+    }
+  }
+
+  // 下拉组件el-dropdown
+  .el-dropdown {
+    .el-dropdown-link {
+      color: $--color-primary;
+    }
+  }
+
+  .el-select-dropdown {
+    .el-select-dropdown__item {
+      &.selected {
+        color: $--color-primary;
+      }
+    }
+  }
+
+  // 对话框组件el-dialog
+  .el-dialog {
+    .el-dialog__header,
+    .el-dialog__body,
+    .el-dialog__footer {
+      padding-left: 40px;
+    }
+
+    .el-dialog__header {
+      .el-dialog__title {
+        color: #000;
+      }
+    }
+  }
+
+  // 页头组件
+  .el-page-header {
+    .el-page-header__content {
+      font-size: 14px;
+    }
+  }
+
+  // 标记组件
+  .el-badge {
+    .el-badge__content {
+      height: 16px;
+      font-size: 10px;
+      padding: 0 5px;
+    }
+  }
+
+  // 步骤条组件
+  .el-steps {
+    .el-step__head {
+      &.is-success {
+      }
+
+      &.is-process {
+      }
+
+      .el-step__icon {
+        border-width: 1px;
+      }
+    }
+  }
+}
